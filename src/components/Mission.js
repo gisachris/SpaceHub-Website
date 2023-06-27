@@ -8,9 +8,11 @@ function Mission(props) {
       <tr>
         <td className='name'>{missionName}</td>
         <td>{missionDesc}</td>
-        <td className='minors'>Not started</td>
+        <td className='member'>
+          <span>Not a member</span>
+        </td>
         <td>
-          <button className='minors'>Join</button>
+          <button className='minors'>Join mission</button>
         </td>
       </tr>
     </tbody>
