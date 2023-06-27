@@ -17,14 +17,16 @@ const RocketsView = () => {
     rocketsData.map((obj) => (
       <div key={obj.id} className="rocketInfo">
         <img src={obj.image} alt={`rocket ${obj.id}s display`} className="rocketImage" />
-        {obj.booked === true ? (
-          <div className="bookedMark">Reserved</div>
-        ) : null }
-        <span className="rocketTitle">{obj.name}</span>
-        <p className="rocketParagraph">{obj.description}</p>
-        {obj.booked === false ? (
-          <button type="submit" className="bookRocket">Reserve Rocket</button>
-        ) : null }
+        <section className="rocketSecInfo">
+          {obj.booked === true ? (
+            <div className="bookedMark">Reserved</div>
+          ) : null }
+          <span className="rocketTitle">{obj.name}</span>
+          <p className="rocketParagraph">{obj.description}</p>
+          {obj.booked === false ? (
+            <button type="submit" className="bookRocket">Reserve Rocket</button>
+          ) : null }
+        </section>
       </div>
     ))
   );
