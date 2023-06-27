@@ -2,7 +2,7 @@ import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  rocketsData: [],
+  Data: [],
   loading: false,
   error: '',
 };
@@ -10,8 +10,8 @@ const initialState = {
 export const fetchData = createAsyncThunk(
   'rockets/fetchData',
   async () => {
-    const rocketData = await axios.get('https://api.spacexdata.com/v3/rockets');
-    return rocketData;
+    const request = await axios.get('https://api.spacexdata.com/v3/rockets');
+    return request.data;
   },
 );
 
@@ -39,7 +39,7 @@ const RocketSlice = createSlice({
 
     builder.addCase(fetchData.fulfilled, (state, action) => {
       state.loading = false;
-      state.rocketsData = processData(action.payload);
+      state.Data = processData(action.payload);
     });
 
     builder.addCase(fetchData.rejected, (state, action) => {
