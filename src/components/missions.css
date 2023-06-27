@@ -1,0 +1,41 @@
+.table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+table {
+  width: 90%;
+  border: 1px solid #333;
+  border-collapse: collapse;
+}
+thead {
+  height: 40px;
+}
+th {
+  width: 70px;
+  text-align: left;
+  border: 1px solid #333;
+}
+tr {
+  width: 100%;
+}
+td {
+  text-align: left;
+  padding-bottom: 15px;
+  border: 1px solid #333;
+}
+tbody:nth-child(even) {
+  background-color: #ddd;
+}
+.desc {
+  width: 550px;
+}
+button {
+  margin-left: 20px;
+  width: 90px;
+}
+.name {
+  font-weight: bold;
+  width: 10%;
+}

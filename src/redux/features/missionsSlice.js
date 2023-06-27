@@ -11,12 +11,12 @@ const initialState = {
 
 export const fetchMissions = createAsyncThunk(
   'missions/fetchMissions',
-  async thunk => {
+  async thunkAPI => {
     try {
       const response = await axios(url);
       return response.data;
     } catch (error) {
-      return thunk.rejectWithValue('Something went wrong');
+      return thunkAPI.rejectWithValue('Something went wrong');
     }
   }
 );
@@ -44,4 +44,4 @@ const missionsSlice = createSlice({
   },
 });
 
-export default missionsSlice.reducer
+export default missionsSlice.reducer;
