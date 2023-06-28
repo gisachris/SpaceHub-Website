@@ -1,13 +1,8 @@
 /*eslint-disable*/
 import React from 'react';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import PropTypes from 'prop-types';
-import {
-  joinMission,
-  fetchMissions,
-  leaveMission,
-} from '../redux/features/missionsSlice';
-import { useDispatch } from 'react-redux';
+import {joinMission, leaveMission} from '../redux/features/missionsSlice';
 
 function Mission(props) {
   const dispatch = useDispatch();

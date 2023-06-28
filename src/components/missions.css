@@ -82,3 +82,23 @@ tbody:nth-child(even) {
 .empty {
   width: 140px;
 }
+
+.joined-mission {
+  width: 200px;
+}
+
+.mision-table {
+  width: 300px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.mission-table > tr {
+  width: 300px;
+  border: 1px solid black;
+}
+
+.mission-table > tr > td {
+  width: 300px;
+  border: 1px solid black;
+}
