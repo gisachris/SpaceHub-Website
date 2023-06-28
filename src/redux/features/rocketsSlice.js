@@ -39,7 +39,6 @@ const RocketSlice = createSlice({
         }
         return rocket;
       });
-      localStorage.setItem('reservedRockets', JSON.stringify(newArray));
       return { ...state, Data: newArray };
     },
     cancel: (state, action) => {
@@ -49,7 +48,6 @@ const RocketSlice = createSlice({
         }
         return rocket;
       });
-      localStorage.setItem('reservedRockets', JSON.stringify(newArray));
       return { ...state, Data: newArray };
     },
   },
@@ -60,14 +58,8 @@ const RocketSlice = createSlice({
 
     builder.addCase(fetchData.fulfilled, (state, action) => {
       state.loading = false;
-      const storedReservedRockets = localStorage.getItem('reservedRockets');
-      const reservedRockets = storedReservedRockets ? JSON.parse(storedReservedRockets) : [];
       const processedData = processData(action.payload);
-      if (reservedRockets.length > 0) {
-        state.Data = reservedRockets;
-      } else {
-        state.Data = processedData;
-      }
+      state.Data = processedData;
     });
 
     builder.addCase(fetchData.rejected, (state, action) => {
