@@ -1,5 +1,9 @@
 /*eslint-disable*/
 import {Routes, Route} from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchMissions } from './redux/features/missionsSlice';
+import { fetchData } from './redux/features/rocketsSlice';
 import Navigation from './components/navigation';
 import NotFound from './components/notFound';
 import Profile from './components/Profile';
@@ -9,6 +13,12 @@ import './styles/profile.css';
 import RocketsDisplay from './components/rocketsDisplay';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchData());
+    dispatch(fetchMissions());
+    // eslint-disable-next-line
+  }, []);
   return (
     <>
       <Navigation />

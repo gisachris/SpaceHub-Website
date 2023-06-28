@@ -1,15 +1,12 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchMissions } from '../redux/features/missionsSlice';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Mission from './Mission';
 import './missions.css';
 
 function Missions() {
-  const dispatch = useDispatch();
   const { missions } = useSelector((store) => store.missions);
-  useEffect(() => {
-    dispatch(fetchMissions());
-  }, [dispatch]);
+  // missions.forEach(misson => console.log(misson.mission_id));
+
   return (
     <div className="table">
       <table>
