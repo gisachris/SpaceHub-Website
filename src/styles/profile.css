@@ -16,7 +16,7 @@
   width: 50%;
 }
 
-.rocketsHeader  {
+.rocketsHeader {
   text-align: left;
   font-size: 1.9rem;
   font-weight: 500;
@@ -30,6 +30,6 @@ table {
 }
 
 .rocketdata {
-  padding: 10px 0px 15px 10px;
+  padding: 10px 0 15px 10px;
   border: 2px solid rgb(175, 175, 175);
 }
