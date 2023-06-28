@@ -28,7 +28,15 @@ const missionsSlice = createSlice({
     joinMission: (state, action) => {
       state.missions = state.missions.map((mission) => {
         if (mission.mission_id !== action.payload) return mission;
-        return { ...mission, joined: true };
+        return { ...mission, joined: !mission.joined };
+      });
+    },
+    leaveMission: (state, action) => {
+      state.missions = state.missions.map((mission) => {
+        if (mission.mission_id === action.payload) {
+          return { ...mission, joined: false };
+        }
+        return mission;
       });
     },
   },
@@ -52,4 +60,4 @@ const missionsSlice = createSlice({
 });
 
 export default missionsSlice.reducer;
-export const { joinMission } = missionsSlice.actions;
+export const { joinMission, leaveMission } = missionsSlice.actions;
