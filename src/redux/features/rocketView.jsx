@@ -1,14 +1,9 @@
-import { useEffect } from 'react';
 import '../../styles/rockets.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchData, reserve, cancel } from './rocketsSlice';
+import { reserve, cancel } from './rocketsSlice';
 
 const RocketsView = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchData());
-    // eslint-disable-next-line
-  }, []);
 
   const rocketstate = useSelector((state) => state.rockets);
   const rocketsData = rocketstate.Data;

@@ -1,8 +1,8 @@
 /*eslint-disable*/
-import React, {useEffect} from 'react';
+import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import PropTypes from 'prop-types';
-import {joinMission, fetchMissions} from '../redux/features/missionsSlice';
+import {joinMission} from '../redux/features/missionsSlice';
 
 function Mission(props) {
   const dispatch = useDispatch();
@@ -10,10 +10,6 @@ function Mission(props) {
   const missions = useSelector(state => state.missions.missions);
   const mission = missions.find(mission => mission.mission_id === id);
   const buttonClass = mission?.joined ? 'btn joined' : 'btn';
-
-  useEffect(() => {
-    dispatch(fetchMissions());
-  }, [dispatch]);
 
   return (
     <tbody>
