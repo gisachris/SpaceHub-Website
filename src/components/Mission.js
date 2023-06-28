@@ -29,7 +29,7 @@ function Mission(props) {
             onClick={() => dispatch(joinMission(id))}
             type='submit'
           >
-            Join mission
+            {mission?.joined ? 'Leave mission' : 'Join mission'}
           </button>
         </td>
       </tr>
