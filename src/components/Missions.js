@@ -19,7 +19,7 @@ function Missions() {
             <th className="name">Mission</th>
             <th className="desc">Descrption</th>
             <th className="status">Status</th>
-            <th> </th>
+            <th className="empty"> </th>
           </tr>
         </thead>
 

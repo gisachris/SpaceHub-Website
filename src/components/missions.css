@@ -39,26 +39,42 @@ tbody:nth-child(even) {
   width: 550px;
 }
 
-button {
+.join-btn {
   margin-left: 20px;
   border: 1px solid #00000098;
   height: 40px;
   border-radius: 5px;
+  width: 80%;
+  margin-top: 5px;
+}
+.joined {
+  color: #f02;
+  border: 1px solid #f01;
 }
 
 .name {
   font-weight: bold;
   width: 10%;
 }
-
-.member > span {
-  background-color: gray;
+.members {
+  width: 140px;
+}
+.member {
+  background-color: #a9a9a9;
   border-radius: 3px;
   margin-left: 10px;
   padding: 5px;
 }
-
-.joined {
-  background-color: red;
+.active-mission {
+  background-color: green;
+  border-radius: 3px;
+  margin-left: 10px;
+  padding: 5px;
   color: #fff;
+  border: none;
+  text-decoration: none;
+}
+
+.empty {
+  width: 140px;
 }
