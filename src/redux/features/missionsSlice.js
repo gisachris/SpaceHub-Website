@@ -1,6 +1,6 @@
-/*eslint-disable*/
-import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+
 const url = 'https://api.spacexdata.com/v3/missions';
 
 const initialState = {
@@ -11,14 +11,14 @@ const initialState = {
 
 export const fetchMissions = createAsyncThunk(
   'missions/fetchMissions',
-  async thunkAPI => {
+  async (thunkAPI) => {
     try {
       const response = await axios(url);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue('Something went wrong');
     }
-  }
+  },
 );
 
 const missionsSlice = createSlice({
@@ -26,14 +26,14 @@ const missionsSlice = createSlice({
   initialState,
   reducers: {
     joinMission: (state, action) => {
-      state.missions = state.missions.map(mission => {
+      state.missions = state.missions.map((mission) => {
         if (mission.mission_id !== action.payload) return mission;
-        return {...mission, joined: true};
+        return { ...mission, joined: true };
       });
     },
   },
-  extraReducers: builder => {
-    builder.addCase(fetchMissions.pending, state => ({
+  extraReducers: (builder) => {
+    builder.addCase(fetchMissions.pending, (state) => ({
       ...state,
       isLoading: true,
     }));
@@ -52,4 +52,4 @@ const missionsSlice = createSlice({
 });
 
 export default missionsSlice.reducer;
-export const {joinMission} = missionsSlice.actions;
+export const { joinMission } = missionsSlice.actions;
