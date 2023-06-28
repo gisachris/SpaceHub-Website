@@ -33,11 +33,11 @@ function Mission(props) {
         <td>
           <button
             className={joinClass}
-            onClick={() => {
+            onClick={() =>
               mission.joined
                 ? dispatch(leaveMission(id))
-                : dispatch(joinMission(id));
-            }}
+                : dispatch(joinMission(id))
+            }
             type='submit'
           >
             {mission?.joined ? 'Leave mission' : 'Join mission'}

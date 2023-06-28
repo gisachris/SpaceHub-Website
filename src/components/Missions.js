@@ -7,7 +7,6 @@ import './missions.css';
 function Missions() {
   const dispatch = useDispatch();
   const { missions } = useSelector((store) => store.missions);
-  // missions.forEach(misson => console.log(misson.mission_id));
   useEffect(() => {
     dispatch(fetchMissions());
   }, [dispatch]);
