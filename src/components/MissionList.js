@@ -1,15 +1,14 @@
-/*eslint-disable*/
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styles/profile.css';
 
 function MissionList(props) {
-  const {missionName} = props;
-  console.log(missionName);
+  const { missionName } = props;
   return (
-    <table className='mision-table'>
+    <table>
       <tbody>
-        <tr className='joined-mission'>
-          <td>{missionName}</td>
+        <tr className="joined-mission">
+          <td className="Missionsdata">{missionName}</td>
         </tr>
       </tbody>
     </table>

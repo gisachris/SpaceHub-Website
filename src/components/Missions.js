@@ -5,7 +5,6 @@ import './missions.css';
 
 function Missions() {
   const { missions } = useSelector((store) => store.missions);
-  // missions.forEach(misson => console.log(misson.mission_id));
 
   return (
     <div className="table">

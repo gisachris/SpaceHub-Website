@@ -1,5 +1,4 @@
-/*eslint-disable*/
-import {Routes, Route} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchMissions } from './redux/features/missionsSlice';
@@ -17,17 +16,16 @@ function App() {
   useEffect(() => {
     dispatch(fetchData());
     dispatch(fetchMissions());
-    // eslint-disable-next-line
   }, []);
   return (
     <>
       <Navigation />
       <Routes>
         <Route index element={<RocketsDisplay />} />
-        <Route path='/rockets' element={<RocketsDisplay />} />
-        <Route path='/missions' element={<Missions />} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='*' element={<NotFound />} />
+        <Route path="/rockets" element={<RocketsDisplay />} />
+        <Route path="/missions" element={<Missions />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
