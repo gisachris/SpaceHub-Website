@@ -23,7 +23,7 @@ const processData = (arrayofObjects) => {
     description: obj.description,
     image: obj.flickr_images[0],
     wikipedia: obj.wikipedia,
-    booked: false,
+    reserved: false,
   }));
   return preciseData;
 };
@@ -31,7 +31,28 @@ const processData = (arrayofObjects) => {
 const RocketSlice = createSlice({
   name: 'rockets',
   initialState,
-  reducers: {},
+  reducers: {
+    reserve: (state, action) => {
+      const newArray = state.Data.map((rocket) => {
+        if (rocket.id === action.payload) {
+          return { ...rocket, reserved: true };
+        }
+        return rocket;
+      });
+      localStorage.setItem('reservedRockets', JSON.stringify(newArray));
+      return { ...state, Data: newArray };
+    },
+    cancel: (state, action) => {
+      const newArray = state.Data.map((rocket) => {
+        if (rocket.id === action.payload) {
+          return { ...rocket, reserved: false };
+        }
+        return rocket;
+      });
+      localStorage.setItem('reservedRockets', JSON.stringify(newArray));
+      return { ...state, Data: newArray };
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchData.pending, (state) => {
       state.loading = true;
@@ -39,7 +60,14 @@ const RocketSlice = createSlice({
 
     builder.addCase(fetchData.fulfilled, (state, action) => {
       state.loading = false;
-      state.Data = processData(action.payload);
+      const storedReservedRockets = localStorage.getItem('reservedRockets');
+      const reservedRockets = storedReservedRockets ? JSON.parse(storedReservedRockets) : [];
+      const processedData = processData(action.payload);
+      if (reservedRockets.length > 0) {
+        state.Data = reservedRockets;
+      } else {
+        state.Data = processedData;
+      }
     });
 
     builder.addCase(fetchData.rejected, (state, action) => {
@@ -49,4 +77,5 @@ const RocketSlice = createSlice({
   },
 });
 
+export const { reserve, cancel } = RocketSlice.actions;
 export default RocketSlice.reducer;
