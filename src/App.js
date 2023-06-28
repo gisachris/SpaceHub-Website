@@ -13,8 +13,8 @@ function App() {
     <>
       <Navigation />
       <Routes>
-        <Route index element={<RocketsDisplay />}/>
-        <Route path='/rockets' element={<RocketsDisplay />}/>
+        <Route index element={<RocketsDisplay />} />
+        <Route path='/rockets' element={<RocketsDisplay />} />
         <Route path='/missions' element={<Missions />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='*' element={<NotFound />} />

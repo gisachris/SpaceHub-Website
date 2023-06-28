@@ -7,7 +7,7 @@ import './missions.css';
 function Missions() {
   const dispatch = useDispatch();
   const {missions} = useSelector(store => store.missions);
-
+  // missions.forEach(misson => console.log(misson.mission_id));
   useEffect(() => {
     dispatch(fetchMissions());
   }, [dispatch]);
@@ -16,16 +16,17 @@ function Missions() {
       <table>
         <thead>
           <tr>
-            <th className='minors'>Mission</th>
+            <th className='name'>Mission</th>
             <th className='desc'>Descrption</th>
-            <th className='minors'>Status</th>
-            <th className='minors'></th>
+            <th className='status'>Status</th>
+            <th></th>
           </tr>
         </thead>
 
         {missions.map(mission => (
           <Mission
             key={mission.mission_id}
+            id={mission.mission_id}
             missionName={mission.mission_name}
             missionDesc={mission.description}
           />

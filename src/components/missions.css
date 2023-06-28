@@ -57,3 +57,7 @@ button {
   margin-left: 10px;
   padding: 5px;
 }
+.joined {
+  background-color: red;
+  color: #fff;
+}
