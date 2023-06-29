@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchMissions } from './redux/features/missionsSlice';
 import { fetchData } from './redux/features/rocketsSlice';
 import Navigation from './components/navigation';
 import NotFound from './components/notFound';
@@ -15,7 +14,6 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchData());
-    dispatch(fetchMissions());
   }, []);
   return (
     <>
