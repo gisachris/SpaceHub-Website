@@ -1,8 +1,9 @@
 /*eslint-disable*/
 import React from 'react';
 import PropTypes from 'prop-types';
-const RocketView = ({rocketsData, handleReservations, handlecancelation}) =>
-  rocketsData.map(obj => (
+
+const RocketView = ({data, handleReservations, handlecancelation}) =>
+  data.map(obj => (
     <div key={obj.id} className='rocketInfo'>
       <img
         src={obj.image}
@@ -43,7 +44,7 @@ const RocketView = ({rocketsData, handleReservations, handlecancelation}) =>
   ));
 
 RocketView.propTypes = {
-  rocketsData: PropTypes.arrayOf(
+  data: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
