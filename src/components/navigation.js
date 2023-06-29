@@ -11,9 +11,15 @@ const Navigation = () => (
         <h1 className="logoText">Space Traveler&apos;s Hub</h1>
       </span>
       <ul className="linksHolder">
-        <li><NavLink to="/rockets">Rockets</NavLink></li>
-        <li><NavLink to="/missions">Missions</NavLink></li>
-        <li><NavLink to="/profile">MyProfile</NavLink></li>
+        <li>
+          <NavLink to="/rockets">Rockets</NavLink>
+        </li>
+        <li>
+          <NavLink to="/missions">Missions</NavLink>
+        </li>
+        <li>
+          <NavLink to="/profile">MyProfile</NavLink>
+        </li>
         <Outlet />
       </ul>
     </nav>
