@@ -1,18 +1,17 @@
-/*eslint-disable*/
 import PropTypes from 'prop-types';
 
-const Mission = ({joinData}) => (
+const Mission = ({ joinData }) => (
   <section>
-    <div className='mission'>
-      <h2 className='missionHeader'>mission</h2>
+    <div className="mission">
+      <h2 className="missionHeader">mission</h2>
       {joinData.length === 0 && <p>No mission have been reserved yet!</p>}
 
       {joinData.length > 0 && (
-        <table className='holderTable'>
+        <table className="holderTable">
           <tbody>
-            {joinData.map(mission => (
-              <tr key={mission.id} className='missionrow'>
-                <td className='missionData'>{mission.name}</td>
+            {joinData.map((mission) => (
+              <tr key={mission.id} className="missionrow">
+                <td className="missionData">{mission.name}</td>
               </tr>
             ))}
           </tbody>
@@ -29,7 +28,7 @@ Mission.propTypes = {
       name: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       join: PropTypes.bool.isRequired,
-    })
+    }),
   ).isRequired,
 };
 

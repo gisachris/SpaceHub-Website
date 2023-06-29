@@ -1,10 +1,10 @@
-/*eslint-disable*/
+import PropTypes from 'prop-types';
 
-function Profile({missionData, rocketData}) {
+function Profile({ missionData, rocketData }) {
   return (
-    <div className='profile'>
-      <div className='missions'>
-        {missionData.map(data => (
+    <div className="profile">
+      <div className="missions">
+        {missionData.map((data) => (
           <ul key={data.id}>
             <li>{data.name}</li>
             <li>{data.desc}</li>
@@ -12,8 +12,8 @@ function Profile({missionData, rocketData}) {
           </ul>
         ))}
       </div>
-      <div className='rockets'>
-        {rocketData.map(data => (
+      <div className="rockets">
+        {rocketData.map((data) => (
           <ul key={data.id}>
             <li>{data.name}</li>
             <li>{data.desc}</li>
@@ -25,21 +25,25 @@ function Profile({missionData, rocketData}) {
   );
 }
 
-export default Profile;
+Profile.propTypes = {
+  missionData: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      reserved: PropTypes.bool.isRequired,
+    }),
+  ).isRequired,
+  rocketData: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      reserved: PropTypes.bool.isRequired,
+    }),
+  ).isRequired,
+};
 
-const missionData = [
-  {
-    id: 1,
-    name: 'name 1',
-    desc: 'desc 1',
-    join: false,
-  },
-];
-const rocketData = [
-  {
-    id: 1,
-    name: 'name 1',
-    desc: 'desc 1',
-    false: false,
-  },
-];
+export default Profile;

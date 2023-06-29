@@ -1,5 +1,4 @@
-/*eslint-disable*/
-import {render} from '@testing-library/react';
+import { render } from '@testing-library/react';
 import MissionList from '../mocks/MissionList.';
 
 describe('tests for Profile component', () => {
@@ -13,7 +12,7 @@ describe('tests for Profile component', () => {
       },
     ];
 
-    const {container} = render(<MissionList missionData={missionData} />);
+    const { container } = render(<MissionList missionData={missionData} />);
     expect(container).toMatchSnapshot();
   });
 });

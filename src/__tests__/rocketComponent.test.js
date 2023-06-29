@@ -1,5 +1,4 @@
-/*eslint-disable*/
-import {render} from '@testing-library/react';
+import { render } from '@testing-library/react';
 import RocketView from '../mocks/rocket.mock';
 
 describe('making tests for rocket components', () => {
@@ -28,7 +27,7 @@ describe('making tests for rocket components', () => {
         rocketsData={rocketsData}
         handleReservations={handleReservations}
         handlecancelation={handlecancelation}
-      />
+      />,
     );
     expect(tree).toMatchSnapshot();
   });
