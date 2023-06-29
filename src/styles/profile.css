@@ -1,0 +1,47 @@
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 70px;
+  text-align: left;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.missions {
+  width: 50%;
+}
+
+.rockets {
+  width: 50%;
+}
+
+.rocketsHeader {
+  text-align: left;
+  font-size: 1.9rem;
+  font-weight: 500;
+  padding-left: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(175, 175, 175);
+  border-radius: 5px;
+}
+
+.rocketdata {
+  padding: 10px 0 15px 10px;
+  border: 2px solid rgb(175, 175, 175);
+}
+
+.Missionsdata {
+  padding: 10px 20px 15px 10px;
+  border: 2px solid rgb(175, 175, 175);
+}
+
+.missions h2 {
+  text-align: left;
+  font-size: 1.9rem;
+  font-weight: 500;
+  padding-left: 5px;
+}

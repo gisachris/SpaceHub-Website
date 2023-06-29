@@ -1,0 +1,104 @@
+.table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+table {
+  width: 90%;
+  border: 1px solid #333;
+  border-collapse: collapse;
+}
+
+thead {
+  height: 40px;
+}
+
+th {
+  width: 90px;
+  text-align: left;
+  border: 1px solid #333;
+}
+
+tr {
+  width: 100%;
+}
+
+td {
+  text-align: left;
+  padding-bottom: 15px;
+  border: 1px solid #333;
+}
+
+tbody:nth-child(even) {
+  background-color: #ddd;
+}
+
+.desc {
+  width: 550px;
+}
+
+.join-btn {
+  margin-left: 20px;
+  border: 1px solid #00000098;
+  height: 40px;
+  border-radius: 5px;
+  width: 80%;
+  margin-top: 5px;
+}
+
+.joined {
+  color: #f02;
+  border: 1px solid #f01;
+}
+
+.name {
+  font-weight: bold;
+  width: 10%;
+}
+
+.members {
+  width: 140px;
+}
+
+.member {
+  background-color: #a9a9a9;
+  border-radius: 3px;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.active-mission {
+  background-color: green;
+  border-radius: 3px;
+  margin-left: 10px;
+  padding: 5px;
+  color: #fff;
+  border: none;
+  text-decoration: none;
+}
+
+.empty {
+  width: 140px;
+}
+
+.joined-mission {
+  width: 200px;
+}
+
+.mision-table {
+  width: 300px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.mission-table > tr {
+  width: 300px;
+  border: 1px solid black;
+}
+
+.mission-table > tr > td {
+  width: 300px;
+  border: 1px solid black;
+}
