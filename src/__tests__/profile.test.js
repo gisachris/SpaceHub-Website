@@ -1,5 +1,4 @@
-/*eslint-disable*/
-import {render} from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Profile from '../mocks/Profile';
 
 describe('tests for Profile component', () => {
@@ -21,8 +20,8 @@ describe('tests for Profile component', () => {
       },
     ];
 
-    const {container} = render(
-      <Profile rocketData={rocketData} missionData={missionData} />
+    const { container } = render(
+      <Profile rocketData={rocketData} missionData={missionData} />,
     );
     expect(container).toMatchSnapshot();
   });

@@ -1,5 +1,4 @@
-/*eslint-disable*/
-import {render} from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Mission from '../mocks/Mission.mock';
 
 describe('making tests for rocket components in profile view', () => {
@@ -35,9 +34,9 @@ describe('making tests for rocket components in profile view', () => {
       },
     ];
 
-    const joinData = missionData.filter(obj => obj.join === true);
+    const joinData = missionData.filter((obj) => obj.join === true);
 
-    const {container} = render(<Mission joinData={joinData} />);
+    const { container } = render(<Mission joinData={joinData} />);
     expect(container).toMatchSnapshot();
   });
 });
