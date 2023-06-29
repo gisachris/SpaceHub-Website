@@ -1,6 +1,6 @@
-import '../../styles/rockets.css';
+import '../styles/rockets.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { reserve, cancel } from './rocketsSlice';
+import { reserve, cancel } from '../redux/features/rocketsSlice';
 
 const RocketsView = () => {
   const dispatch = useDispatch();

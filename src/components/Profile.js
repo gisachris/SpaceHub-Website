@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import DisplayMissions from './DisplayMissions';
+import ProfileRocketView from './rocketProfileView';
 
 function Profile() {
   const rocketData = useSelector((state) => state.rockets.Data);
@@ -10,22 +11,7 @@ function Profile() {
         <DisplayMissions />
       </div>
       <div className="rockets">
-        <h2 className="rocketsHeader">Rockets</h2>
-        {bookedRockets.length === 0 && (
-          <p>No rockets have been reserved yet!</p>
-        )}
-
-        {bookedRockets.length > 0 && (
-          <table className="holderTable">
-            <tbody>
-              {bookedRockets.map((rocket) => (
-                <tr key={rocket.id} className="rocketrow">
-                  <td className="rocketdata">{rocket.name}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
+        <ProfileRocketView reservedData={bookedRockets} />
       </div>
     </div>
   );

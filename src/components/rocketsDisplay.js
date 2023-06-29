@@ -1,5 +1,5 @@
 import React from 'react';
-import RocketsView from '../redux/features/rocketView';
+import RocketsView from './rocketView';
 import '../styles/rockets.css';
 
 const RocketsDisplay = () => (
