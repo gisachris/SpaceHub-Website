@@ -7,10 +7,13 @@ const initialState = {
   error: '',
 };
 
-export const fetchData = createAsyncThunk('rockets/fetchData', async () => {
-  const request = await axios.get('https://api.spacexdata.com/v3/rockets');
-  return request.data;
-});
+export const fetchData = createAsyncThunk(
+  'rockets/fetchData',
+  async () => {
+    const request = await axios.get('https://api.spacexdata.com/v3/rockets');
+    return request.data;
+  },
+);
 
 const processData = (arrayofObjects) => {
   const preciseData = arrayofObjects.map((obj) => ({
