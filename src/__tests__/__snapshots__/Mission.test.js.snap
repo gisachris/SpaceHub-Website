@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Mission component renders missions correctly 1`] = `"<div><div class=\\"missions\\"><table><tbody><tr><td>Mission 1</td><td>Mission 1 Description</td><td>Active</td><td>Join</td></tr></tbody></table></div><div class=\\"missions\\"><table><tbody><tr><td>Mission 2</td><td>Mission 2 Description</td><td>Member</td><td>Leave</td></tr></tbody></table></div></div>"`;
-
-exports[`renders missions correctly 1`] = `"<missions missions=\\"[object Object],[object Object]\\"></missions>"`;
